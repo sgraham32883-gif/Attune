@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "Session": {
+      "title": "Session",
+      "description": "A single emotional check-in session.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The ID of the user who created the session."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the session occurred."
+        },
+        "emotion": {
+          "type": "string",
+          "description": "The primary emotion identified."
+        },
+        "intensity": {
+          "type": "number",
+          "description": "The intensity of the emotion (1-10)."
+        },
+        "reflection": {
+          "type": "string",
+          "description": "User's reflection or notes."
+        },
+        "skillUsed": {
+          "type": "string",
+          "description": "The regulation skill used during the session."
+        }
+      },
+      "required": ["userId", "timestamp", "emotion", "intensity"]
+    }
+  },
+  "firestore": {
+    "/sessions/{sessionId}": {
+      "schema": "Session",
+      "description": "Collection of emotional check-in sessions."
+    }
+  }
+}

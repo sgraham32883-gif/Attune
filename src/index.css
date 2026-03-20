@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer base {
+  .prose {
+    @apply text-gray-600 leading-relaxed;
+  }
+  .prose p {
+    @apply mb-4;
+  }
+  .prose ul {
+    @apply list-disc pl-5 mb-4;
+  }
+  .prose li {
+    @apply mb-1;
+  }
+}
